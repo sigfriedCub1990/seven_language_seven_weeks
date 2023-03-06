@@ -1,0 +1,3 @@
+***Error*** some_atom
+***Error*** "Oh no, something broke."
+***Error*** "Erlang rocks!."
