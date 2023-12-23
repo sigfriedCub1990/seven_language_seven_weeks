@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+file_pattern="$1"
+SEPARATOR="}"
+
+function main {
+	for rev in $("revisions"); do
+		echo "$(number_of_lines)" $SEPARATOR "$rev" $SEPARATOR "$(commit_description)"
+	done
+}
+
+function revisions {
+	git rev-list --reverse --abbrev-commit HEAD
+}
+
+function commit_description {
+	git log --format="%s" -1 "$rev"
+}
+
+function number_of_lines {
+	git ls-tree -r "$rev" |
+		grep "$file_pattern" |
+		awk '{print $3}' |
+		xargs git show |
+		wc -l
+}
+
+main | column -t -s '}'
+
+# vim; ft=sh

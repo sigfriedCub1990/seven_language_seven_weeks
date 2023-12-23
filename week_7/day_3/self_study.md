@@ -5,7 +5,7 @@
 
 # Do
 
-- Write a function that looks up a hash table value that uses the `Maybe` monda. Write a hash that store other hashes, several levels deep. Use the `Maybe` monad to retrieve an element for a hash key several levels deep.
+- Write a function that looks up a hash table value that uses the `Maybe` monad. Write a hash that store other hashes, several levels deep. Use the `Maybe` monad to retrieve an element for a hash key several levels deep.
 - Represent a maze in Haskell. You'll need a `Maze` and a `Node` type, as well as a function to return a node given its coordinates. The node should have a list of exits to other nodes.
 - Use a List monad to solved the maze.
 - Implement a Monad in a nonfunctional language, like Ruby.
